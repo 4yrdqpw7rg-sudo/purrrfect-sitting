@@ -567,3 +567,65 @@ p:last-child { margin-bottom: 0; }
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
+
+/* ==========================================================================
+   Mobile hardening
+   ========================================================================== */
+
+/* Stop any single wide element from making the whole page scroll sideways.
+   'clip' rather than 'hidden' so the sticky header keeps working. */
+body { overflow-x: clip; }
+
+/* Grid and flex children default to min-width:auto, which stops them shrinking
+   below their content and forces overflow. This is the usual cause. */
+.grid > *, .split > *, .footer-grid > *, .hero .wrap > *,
+.cal-grid > *, .gallery > *, .price-card, .card, .quote-card { min-width: 0; }
+
+/* Long unbroken strings — the Instagram handle and email address in the footer
+   are wide enough to push the layout out on a narrow phone. */
+p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; }
+.site-footer a, .cal-fallback { overflow-wrap: anywhere; }
+
+/* auto-fill minmax with a fixed minimum overflows when the viewport is
+   narrower than that minimum. min() caps it at the available width. */
+.cal-grid  { grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); }
+.gallery   { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); }
+.area-list { grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); }
+
+/* The hero update card was absolutely positioned and hanging off the edge.
+   Below 860px it now sits in the flow, tucked under the photo. */
+@media (max-width: 860px) {
+  .hero-visual { margin: 1rem auto 2.5rem; }
+  .split__photo { aspect-ratio: 4 / 3.4; }
+  .update-card {
+    position: static;
+    width: min(320px, 92%);
+    margin: -2.2rem auto 0;
+  }
+}
+
+/* Small phones — tighten gutters and padding so content isn't squeezed. */
+@media (max-width: 430px) {
+  body { font-size: 16px; }
+  .wrap { width: min(100% - 1.75rem, var(--wrap)); }
+  .brand img { height: 38px; }
+  .site-header .wrap { min-height: 68px; }
+  .card, .price-card, .quote-card { padding: 1.4rem 1.2rem; }
+  .quote-card { padding-top: 1.8rem; }
+  .note-box { padding: 1.2rem 1.1rem; }
+  .cal-month { padding: 1rem .85rem 1.1rem; }
+  .timeline li { padding-left: 2.9rem; margin-left: .9rem; }
+  .timeline li::before { width: 2rem; height: 2rem; left: -1rem; }
+  .trust ul { gap: .55rem 1.3rem; }
+  .trust li { font-size: .82rem; }
+  .btn { padding: .8rem 1.25rem; font-size: .9rem; }
+  .btn-row { gap: .6rem; }
+  .price-card__amount { font-size: 2.6rem; }
+  .float-wa { right: 14px; bottom: 14px; }
+}
+
+/* Landscape phones and small tablets — the gallery was dropping to one
+   very tall column earlier than it needed to. */
+@media (min-width: 431px) and (max-width: 700px) {
+  .gallery { grid-template-columns: 1fr 1fr; }
+}
