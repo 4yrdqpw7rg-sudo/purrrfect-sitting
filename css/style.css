@@ -720,3 +720,83 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
 .hero {
   background: linear-gradient(170deg, var(--peach-soft) 0%, #fff 72%);
 }
+
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+.form { margin-top: 1.4rem; }
+.form label {
+  display: block;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1rem;
+}
+.form label em {
+  font-style: normal;
+  color: var(--peach-deep);
+}
+.form input,
+.form textarea {
+  display: block;
+  width: 100%;
+  margin-top: .4rem;
+  padding: .8rem .9rem;
+  font-family: inherit;
+  font-size: .97rem;
+  font-weight: 400;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.form input::placeholder,
+.form textarea::placeholder { color: #9AA5B5; }
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--peach);
+  box-shadow: 0 0 0 3px var(--peach-tint);
+}
+.form textarea { resize: vertical; min-height: 120px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+.form button { margin-top: .4rem; }
+.form-note { font-size: .82rem; color: var(--ink-soft); margin-top: .9rem; }
+.form-hp { position: absolute; left: -9999px; }
+
+.contact-list { display: grid; gap: .7rem; margin-top: 1.4rem; }
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding: .95rem 1.1rem;
+  background: var(--peach-soft);
+  border: 1px solid var(--peach);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.contact-row:hover {
+  background: var(--peach);
+  border-color: var(--peach-deep);
+  transform: translateY(-2px);
+}
+.contact-row__icon {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  flex: none;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy);
+}
+.contact-row__icon svg { width: 19px; height: 19px; }
+.contact-row strong { display: block; color: var(--navy); font-size: .98rem; }
+.contact-row em {
+  display: block;
+  font-style: normal;
+  font-size: .86rem;
+  color: var(--ink-soft);
+  margin-top: .1rem;
+}
