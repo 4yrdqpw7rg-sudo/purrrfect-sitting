@@ -634,3 +634,46 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
 }
 
 /* ---- build 3 ---- */
+
+/* ==========================================================================
+   Video (About page)
+   ========================================================================== */
+.video-frame {
+  margin: 0 auto;
+  max-width: 840px;
+  background: var(--navy);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.video-frame video {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 76vh;
+  margin-inline: auto;
+  background: var(--navy);
+}
+.video-frame figcaption { display: none; }
+
+/* Shown only when the video file is missing, so the page never looks broken */
+.video-frame.is-empty {
+  background: var(--peach-soft);
+  border: 1px solid var(--peach);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.video-frame.is-empty video { display: none; }
+.video-frame.is-empty figcaption {
+  display: block;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .video-frame { border-radius: 14px; }
+  .video-frame video { max-height: 68vh; }
+}
