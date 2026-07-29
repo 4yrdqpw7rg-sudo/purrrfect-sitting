@@ -710,3 +710,13 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
 
 /* the featured price card keeps its highlight border */
 .price-card--feature { border-color: var(--peach-deep); }
+
+/* Page header bands: step the tint up from the palest peach so the brand
+   colour actually registers. Home hero gradient matched to suit. */
+.page-head {
+  background: var(--peach-soft);
+  border-bottom-color: var(--peach);
+}
+.hero {
+  background: linear-gradient(170deg, var(--peach-soft) 0%, #fff 72%);
+}
