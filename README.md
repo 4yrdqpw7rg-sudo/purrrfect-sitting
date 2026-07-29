@@ -25,7 +25,7 @@ robots.txt
 
 Search the files for `EDIT` — every placeholder is flagged with an HTML comment.
 
-1. **WhatsApp number** — every page has `https://wa.me/447XXXXXXXXX`. Replace with the real number in international format, no `+` and no leading zero (e.g. `447700900123`).
+1. ~~WhatsApp number~~ — done, set to 07809421669.
 2. **Facebook URL** — currently `...id=EDIT`.
 3. **Email address** — currently `hello@purrrfectsitting.co.uk`.
 4. **Testimonials** — `testimonials.html` and the pull quote on `index.html` use example reviews. Swap in real ones.
