@@ -676,3 +676,37 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
   .video-frame { border-radius: 14px; }
   .video-frame video { max-height: 68vh; }
 }
+
+/* ==========================================================================
+   Peach card fills — every boxed element takes the brand peach background,
+   matching the photo placeholder colour, instead of plain white.
+   ========================================================================== */
+.card,
+.note-box,
+.quote-card,
+.price-card,
+.area-list li,
+.cal-month,
+.update-card {
+  background: var(--peach-soft);
+  border-color: var(--peach);
+}
+
+.quote-card::before { color: var(--peach); }
+.card__icon { background: #fff; }
+
+/* deepen slightly on hover so interaction still reads */
+.card:hover, .price-card:hover, .quote-card:hover, .area-list li:hover {
+  background: var(--peach);
+  border-color: var(--peach-deep);
+}
+.area-list li { transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+.area-list li:hover { transform: translateY(-2px); }
+.area-list li::before { background: var(--navy); }
+
+/* calendar day cells inside the peach month cards need contrast */
+.cal-day { background: #fff; }
+.cal-day--past { background: none; }
+
+/* the featured price card keeps its highlight border */
+.price-card--feature { border-color: var(--peach-deep); }
