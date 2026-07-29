@@ -656,7 +656,6 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
 }
 .video-frame figcaption { display: none; }
 
-/* Shown only when the video file is missing, so the page never looks broken */
 .video-frame.is-empty {
   background: var(--peach-soft);
   border: 1px solid var(--peach);
@@ -676,44 +675,4 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
 @media (max-width: 640px) {
   .video-frame { border-radius: 14px; }
   .video-frame video { max-height: 68vh; }
-}
-
-/* Removes the top padding so a tinted section runs straight on from the one
-   above it, forming a single continuous block. */
-.section--flush { padding-top: 0; }
-.section--flush .section-head { margin-bottom: 2rem; }
-
-/* ==========================================================================
-   Card hover — peach fill
-   Wrapped in (hover: hover) so touchscreens don't get a stuck hover state
-   after tapping.
-   ========================================================================== */
-.card, .price-card, .quote-card, .area-list li, .note-box {
-  transition: transform .2s ease, box-shadow .2s ease,
-              border-color .2s ease, background-color .2s ease;
-}
-
-@media (hover: hover) {
-  .card:hover,
-  .price-card:hover,
-  .quote-card:hover {
-    background-color: var(--peach-soft);
-    border-color: var(--peach);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-  }
-
-  /* the big decorative quote mark is peach-soft, so lift it on hover
-     or it vanishes into the new background */
-  .quote-card:hover::before { color: var(--peach-deep); }
-
-  .area-list li:hover {
-    background-color: var(--peach-soft);
-    border-color: var(--peach);
-    transform: translateY(-2px);
-  }
-
-  .note-box:hover { background-color: var(--peach-soft); }
-
-  .cal-month:hover { border-color: var(--peach-soft); }
 }
