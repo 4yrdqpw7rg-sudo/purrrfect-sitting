@@ -800,3 +800,32 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
   color: var(--ink-soft);
   margin-top: .1rem;
 }
+
+/* ==========================================================================
+   Update card fixes
+   ========================================================================== */
+
+/* Sit above the hero photo rather than being clipped by it */
+.update-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* The avatar circle was peach on a peach card, so it disappeared.
+   White circle keeps the cat mark readable. */
+.update-card__avatar {
+  background-color: #fff;
+  border: 1px solid var(--peach);
+}
+
+/* The two header lines relied on a <br>, which left a big gap.
+   Stack them properly and tighten the spacing. */
+.update-card__head > span:last-child { display: block; line-height: 1.3; }
+.update-card__meta,
+.update-card__time { display: block; }
+.update-card__head br { display: none; }
+.update-card__head { align-items: center; }
+
+@media (max-width: 860px) {
+  .update-card { margin-top: -1.6rem; }
+}
