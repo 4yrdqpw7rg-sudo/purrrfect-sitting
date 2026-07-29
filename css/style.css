@@ -677,3 +677,8 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
   .video-frame { border-radius: 14px; }
   .video-frame video { max-height: 68vh; }
 }
+
+/* Removes the top padding so a tinted section runs straight on from the one
+   above it, forming a single continuous block. */
+.section--flush { padding-top: 0; }
+.section--flush .section-head { margin-bottom: 2rem; }
