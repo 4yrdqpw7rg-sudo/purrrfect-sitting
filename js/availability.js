@@ -16,15 +16,33 @@
    3. Save, commit, done. Everything else is worked out automatically.
    ========================================================================== */
 
-var LAST_UPDATED = '2026-07-28';
+var LAST_UPDATED = '2026-08-04';
 
 var BOOKINGS = [
-  // EDIT: these are examples — delete them and add your real bookings
-  { from: '2026-08-08', to: '2026-08-16' },
-  { on:   '2026-08-22', status: 'limited' },
-  { from: '2026-09-05', to: '2026-09-12' },
-  { from: '2026-10-19', to: '2026-10-25', status: 'limited' },
-  { from: '2026-12-21', to: '2027-01-02' }
+  // August 2026
+  { on:   '2026-08-01', status: 'limited' },  // Myrtle, pm only
+  { from: '2026-08-02', to: '2026-08-04' },   // Myrtle, am and pm
+  { on:   '2026-08-05', status: 'limited' },  // Myrtle, am only
+  { on:   '2026-08-14', status: 'limited' },  // Sergs, pm only
+  { from: '2026-08-15', to: '2026-08-17', status: 'limited' },  // Sergs + Lorna, mornings only
+  { on:   '2026-08-21', status: 'limited' },  // Sergs, pm only
+  { from: '2026-08-22', to: '2026-08-25' },   // Sergs, am and pm
+  { on:   '2026-08-26', status: 'limited' },  // Sergs, am only
+  { on:   '2026-08-31', status: 'limited' },  // Charlotte, pm only
+
+  // September 2026
+  { from: '2026-09-01', to: '2026-09-03' },   // Charlotte, am and pm
+  { on:   '2026-09-14', status: 'limited' },  // Sergs, one visit
+  { from: '2026-09-15', to: '2026-09-17' },   // Sergs, am and pm
+  { on:   '2026-09-18', status: 'limited' },  // Sergs, am only
+
+  // December 2026
+  { from: '2026-12-24', to: '2026-12-27' },   // Cass
+
+  // January 2027
+  { on:   '2027-01-14', status: 'limited' },  // Sergei, pm only
+  { from: '2027-01-15', to: '2027-01-19' },   // Sergei, am and pm
+  { on:   '2027-01-20', status: 'limited' }   // Sergei, one visit
 ];
 
 /* How many months to show. 6 is usually plenty. */
