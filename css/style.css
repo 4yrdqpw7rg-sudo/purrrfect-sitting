@@ -829,3 +829,15 @@ p, li, a, h1, h2, h3, blockquote, cite, figcaption { overflow-wrap: break-word; 
 @media (max-width: 860px) {
   .update-card { margin-top: -1.6rem; }
 }
+
+/* ==========================================================================
+   Home hero — desktop alignment
+   ========================================================================== */
+
+/* The two hero columns were vertically centred, so the shorter text column
+   floated in the middle of the taller photo and left a big gap above it.
+   Top-align the grid on desktop instead, so the eyebrow line starts level
+   with the top edge of the photo. Mobile (single column) is unaffected. */
+@media (min-width: 861px) {
+  .hero .wrap { align-items: start; }
+}
